@@ -15,11 +15,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <crowdar.cucumber.filter>@Demo</crowdar.cucumber.filter>
+        <crowdar.cucumber.filter>@Test</crowdar.cucumber.filter>
         <cucumber.runner>testngParallel.xml</cucumber.runner>
-        <crowdar.driverHub></crowdar.driverHub>
         <crowdar.cucumber.option>src/test/resources/features --glue com/crowdar --glue com/crowdar/bdd/cukes  --tags ${crowdar.cucumber.filter} --tags 'not @Ignore' --plugin com.crowdar.examples.report.Reporter: --plugin pretty</crowdar.cucumber.option>
-        <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
+        <crowdar.driverHub>http://127.0.0.1:4723/wd/hub</crowdar.driverHub>
         <crowdar.remoteDriverType></crowdar.remoteDriverType>
         <crowdar.reporter.avent>true</crowdar.reporter.avent>
     </properties>
@@ -31,7 +30,6 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <crowdar.driverHub>http://127.0.0.1:4723/wd/hub</crowdar.driverHub>
                 <cucumber.runner>testng.xml</cucumber.runner>
                 <crowdar.avd>Pixel3</crowdar.avd>
                 <crowdar.appLocation>C:\\\\Users\\\\golde\\\\Desktop\\\\lippia-mobile-sample-project\\\\sample_apk\\\\lippia.apk</crowdar.appLocation>
@@ -41,7 +39,6 @@
         <profile>
             <id>StackLocal</id>
             <properties>
-                <crowdar.driverHub>http://localhost:4444/wd/hub</crowdar.driverHub>
                 <crowdar.avd>samsung_galaxy_s7_9.0</crowdar.avd>
                 <crowdar.appLocation>/root/tmp/sample_apk/lippia.apk</crowdar.appLocation>
                 <crowdar.deviceName>Android Emulator</crowdar.deviceName>
@@ -53,7 +50,11 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
+
                 <crowdar.projectType>MOBILE_ANDROID</crowdar.projectType>
+                <crowdar.appLocation>C:\\\\Users\\\\usuario\\\\Desktop\\\\CursoQAAutomation\\\\Mobile\\\\lippia-mobile-sample-project\\\\sample_apk\\\\Clockify.apk</crowdar.appLocation>
+                <crowdar.deviceName>Android Fisico</crowdar.deviceName>
+                <crowdar.projectType.driverCapabilities.jsonFile>src/main/resources/capabilities/androidCapabilities.json</crowdar.projectType.driverCapabilities.jsonFile>
             </properties>
         </profile>
         <profile>

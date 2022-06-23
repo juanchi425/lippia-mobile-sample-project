@@ -1,19 +1,22 @@
-Feature: As a potential client i want to interact with the mobile application
-
-  Scenario Outline: The user starts the application, registers a new user, changes the language, log out of the app and log in to the app.
-    Given The app is loaded correctly
-    When The user goes to the Sign Up page
-    And The user registers a new user with: <username>, <email>, <password>
-    Then Home page is displayed
-
-    When The user changes the language
-    And The user log out of the app
-    Then Login page is displayed
-
-    When The user logs in the application with: <email>, <password>
-    Then Home page is displayed
 
 
+
+Feature: El usuario se logea en la App correctamente
+
+  Scenario Outline: El usuario se logea correctamente con credenciales validas
+    Given la aplicación está cargada correctamente
+    And El usuario inicia sesión en la aplicación con: <email>, <password>
+    When el usuario hace click en Log in
+    Then El usuario verifica el logueo
     Examples:
-      | username    | email                 | password |
-      | juan229mart | juan229mart@gmail.com | 123456   |
+      | email                 | password |
+      | juan229mart@gmail.com | JuanM123 |
+
+  Scenario Outline: El usuario se logea y cierra sesion
+    Given la aplicación está cargada correctamente
+    And El usuario inicia sesión en la aplicación con: <email>, <password>
+    When el usuario hace click en el boton menu hamburguesa
+    And Clikea en el boton Log out
+    Examples:
+      | email                 | password |
+      | juan229mart@gmail.com | JuanM123 |
